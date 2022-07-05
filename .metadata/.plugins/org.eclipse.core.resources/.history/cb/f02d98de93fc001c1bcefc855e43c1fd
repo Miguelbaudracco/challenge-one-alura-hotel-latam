@@ -1,0 +1,18 @@
+package jdbc.modelo;
+
+public class Sesion {
+	
+	public String usuario = "Miguel";
+	public String password = "capo86";
+	public String idEntreFrame;
+	private static Sesion sesion;
+	 
+	private Sesion() {	}
+
+	public synchronized static Sesion getInstance() {
+		if (sesion == null) {
+			sesion = new Sesion();
+		}
+		return sesion;
+	}
+}
